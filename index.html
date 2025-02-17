@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        };
+    </script>
+
+</head>
+<button id="themeToggle" class="p-2 rounded bg-gray-300 dark:bg-gray-700">
+    <span id="themeIcon">asdsad</span>
+</button>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = document.getElementById("themeIcon");
+
+        if (!themeToggle || !themeIcon) return;
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains("dark")) {
+                document.documentElement.classList.remove("dark");
+                localStorage.setItem("theme", "light");
+                themeIcon.textContent = "🌞";
+            } else {
+                document.documentElement.classList.add("dark");
+                localStorage.setItem("theme", "dark");
+                themeIcon.textContent = "🌙";
+            }
+        }
+
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+            themeIcon.textContent = "🌙";
+        } else {
+            themeIcon.textContent = "🌞";
+        }
+
+        themeToggle.addEventListener("click", toggleTheme);
+    });
+</script>
+</body>
+
+</html>
+
+
+
+<body class="bg-white dark:bg-gray-900 dark:text-gray-300">
+    <header class="shadow-lg bg-white dark:bg-gray-800 dark:text-gray-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-5">
+            <img src="https://cdn.prod.website-files.com/671903ed90f70a4ebd6c3998/6730851dac02ab42b844d052_Powerstaffai%20logo-p-500.png"
+                class="h-12 w-auto">
+            <div class="sm:hidden flex items-center">
+                <button id="burgerBtn" class="outline-none mobile-menu-button">
+                    <svg class="w-6 h-6 text-gray-500 hover:text-blue-500" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="hidden sm:flex items-center gap-x-8 text-gray-600 dark:text-gray-300">
+                <a href="#home" class="text-gray-600 hover:text-blue-500 transition duration-300">Home</a>
+                <a href="#use-cases" class="text-gray-600 hover:text-blue-500 transition duration-300">Use Cases</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-500 transition duration-300">Contact</a>
+                <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });"
+                    class="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition duration-300 shadow-md">
+                    Try for Free
+                </button>
+            </nav>
+        </div>
+        <div class="mobile-menu hidden sm:hidden bg-white dark:bg-gray-800 dark:text-gray-300">
+            <ul class="px-8 py-4">
+                <li class="mb-2"><a href="#home"
+                        class="block text-sm px-2 py-3 hover:bg-blue-500 hover:text-white transition duration-300">Home</a>
+                </li>
+                <li class="mb-2"><a href="#use-cases"
+                        class="block text-sm px-2 py-3 hover:bg-blue-500 hover:text-white transition duration-300">Use
+                        Cases</a></li>
+                <li class="mb-2"><a href="#contact"
+                        class="block text-sm px-2 py-3 hover:bg-blue-500 hover:text-white transition duration-300">Contact</a>
+                </li>
+                <li>
+                    <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });"
+                        class="block text-sm px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition duration-300 shadow-md w-full text-center">
+                        Try for Free
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    </button>
+
+    <script>
+        const burgerBtn = document.getElementById('burgerBtn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        burgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+
+</html>
+
+
+<!-- Hero Section -->
+<section id="home" class="text-left py-20 hero-gradient flex flex-col justify-center min-h-screen">
+    <div class="max-w-6xl mx-auto flex items-center w-full px-8 md:px-0 flex-col md:flex-row">
+        <div class="w-full md:w-1/2 pl-0 md:pl-8">
+            <h2 class="text-4xl md:text-6xl font-extrabold text-gray-800 dark:text-white leading-tight">
+                Increase your call center performance with staff powered <span class="gradient-text">with AI</span>
+            </h2>
+            <p class="mt-4 text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                Our AI assistant helps you find the perfect candidates in seconds, transforming your recruitment process
+                and saving valuable resources.
+            </p>
+            <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });"
+                class="mt-8 px-10 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition duration-300 shadow-lg text-lg">
+                Try for Free
+            </button>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center mt-10 md:mt-0">
+            <img src="https://cdn.prod.website-files.com/671903ed90f70a4ebd6c3998/671a63693b5fc4813096ea26_hero%20image.png"
+                alt="AI Assistant" class="w-full md:w-3/4">
+        </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-8 mt-12 md:mt-20 w-full ">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            <div class="text-center md:text-left">
+                <p class="text-4xl md:text-5xl font-bold text-gray-800">400</p>
+                <p class="text-sm text-gray-600">Calls Per Min.</p>
+            </div>
+            <div class=" text-center md:text-left">
+                <p class="text-4xl md:text-5xl font-bold text-gray-800">88%</p>
+                <p class="text-sm text-gray-600">Collection Efficiency</p>
+            </div>
+            <div class=" text-center md:text-left">
+                <p class="text-4xl md:text-5xl font-bold text-gray-800">5x</p>
+                <p class="text-sm text-gray-600">Customer Acquisition</p>
+            </div>
+            <div class=" text-center md:text-left">
+                <p class="text-4xl md:text-5xl font-bold text-gray-800">10x</p>
+                <p class="text-sm text-gray-600">Lower Cost</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<div class="max-w-[90%] mx-auto text-center font-extrabold text-4xl leading-snug text-gray-800">
+    PowerStaff.AI - Automated AI Call Center Representatives for Banks,
+    Credit Unions, Fintech, Collection Agencies,
+    Insurance and E-com.
+    500+ dialogue models.
+</div>
+
+<!--- коробка с картинкой-->
+
+<div class="bg-[#052656] p-8 rounded-3xl mx-auto mt-20 max-w-7xl px-8">
+    <div class="flex flex-col lg:flex-row items-center text-center lg:text-left">
+        <div class="lg:w-1/2 lg:pr-8">
+            <h1
+                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-400 text-3xl lg:text-5xl font-semibold leading-tight">
+                No Integration Worries.<br>No Set Up Costs
+            </h1>
+            <div class="mt-6 text-white text-lg leading-relaxed">
+                <p>
+                    <span class="font-bold">Getting started with PowerStaff.AI is a breeze.</span> <br>
+                    Our technology adapts to different needs, helping your team scale quickly, streamline operations,
+                    and improve customer experiences with ease.
+                </p>
+            </div>
+        </div>
+        <div class="lg:w-1/2 flex justify-center items-center mt-10 lg:mt-0">
+            <img src="https://cdn.prod.website-files.com/671903ed90f70a4ebd6c3998/671a4b53eb1d656968f88178_process%20image.png"
+                alt="PowerStaff AI" class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl rounded-xl">
+        </div>
+    </div>
+</div>
+
+
+<div class="flex flex-col gap-12 p-8 bg-white mt-20">
+    <!-- боксы-->
+    <div id="use-cases" class="w-full flex justify-center items-center py-16 px-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 max-w-3xl">
+            See How Industry Leaders Are Leveraging <span class="text-blue-600">PowerStaff.AI</span> to Boost Their
+            Productivity
+        </h2>
+    </div>
+
+
+    <div class="flex flex-col gap-y-8 md:gap-y-12 px-8">
+        <!-- Карточка 1 -->
+        <div class="bg-[#052656] dark:bg-gray-800 p-8 rounded-3xl mx-auto mt-20 max-w-7xl px-8">
+
+            <div
+                class="absolute top-[15%] bottom-[15%] left-1/2 transform -translate-x-1/2 w-[1px] bg-white hidden md:block">
+            </div>
+
+            <div class="w-full md:w-1/2 flex flex-col justify-center p-6 md:p-12">
+                <div class="flex justify-center md:justify-start">
+                    <img src="https://cdn.prod.website-files.com/671903ed90f70a4ebd6c3998/671b8be2e5ddb86f823b9858_case-2.svg"
+                        alt="Icon" class="w-16 h-16">
+                </div>
+                <h2
+                    class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+                    43%
+                </h2>
+                <p
+                    class="mt-5 text-base sm:text-lg md:text-xl font-medium bg-gradient-to-r from-blue-100 to-white bg-clip-text text-transparent">
+                    Increase in Completed Loan Applications
+                </p>
+            </div>
+
+            <div class="w-full md:w-1/2 flex flex-col justify-center p-6 md:p-12">
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#3B82F6]"></div>
+                        <p
+                            class="text-base sm:text-lg md:text-xl font-medium bg-gradient-to-r from-blue-100 to-white bg-clip-text text-transparent">
+                            Implementation Time: 1.5 Weeks
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#3B82F6]"></div>
+                        <p
+                            class="text-base sm:text-lg md:text-xl font-medium bg-gradient-to-r from-blue-100 to-white bg-clip-text text-transparent">
+                            Augmented their call center with AI Agents
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div
+            class="bg-[#052656] flex flex-col md:flex-row rounded-lg relative max-w-7xl mx-auto w-full overflow-hidden mt-6 md:mt-10">
+            <div
+                class="absolute top-[15%] bottom-[15%] left-1/2 transform -translate-x-1/2 w-[1px] bg-white hidden md:block">
+            </div>
+
+            <div class="w-full md:w-1/2 flex flex-col justify-center p-6 md:p-12">
+                <div class="flex justify-center md:justify-start">
+                    <img src="https://cdn.prod.website-files.com/671903ed90f70a4ebd6c3998/671b8846a04083f2c31eeed0_case-1.svg"
+                        alt="Icon" class="w-16 h-16">
+                </div>
+                <h2
+                    class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+                    $4.2M
+                </h2>
+                <p
+                    class="mt-5 text-base sm:text-lg md:text-xl font-medium bg-gradient-to-r from-blue-100 to-white bg-clip-text text-transparent">
+                    Provision Recovery Income in First Month
+                </p>
+            </div>
+
+            <div class="w-full md:w-1/2 flex flex-col justify-center p-6 md:p-12">
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#3B82F6]"></div>
+                        <p
+                            class="text-base sm:text-lg md:text-xl font-medium bg-gradient-to-r from-blue-100 to-white bg-clip-text text-transparent">
+                            Implementation Time: 1 Week
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#3B82F6]"></div>
+                        <p
+                            class="text-base sm:text-lg md:text-xl font-medium bg-gradient-to-r from-blue-100 to-white bg-clip-text text-transparent">
+                            580K Additional calls per month
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка 3 -->
+        <div
+            class="bg-[#052656] flex flex-col md:flex-row rounded-lg relative max-w-7xl mx-auto w-full overflow-hidden mt-6 md:mt-10">
+            <div
+                class="absolute top-[15%] bottom-[15%] left-1/2 transform -translate-x-1/2 w-[1px] bg-white hidden md:block">
+            </div>
+
+            <div class="w-full md:w-1/2 flex flex-col justify-center p-6 md:p-12">
+                <div class="flex justify-center md:justify-start">
+                    <img src="https://cdn.prod.website-files.com/671903ed90f70a4ebd6c3998/671b8846a04083f2c31eeed0_case-1.svg"
+                        alt="Icon" class="w-16 h-16">
+                </div>
+                <h2
+                    class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
+                    $2.8M
+                </h2>
+                <p
+                    class="mt-5 text-base sm:text-lg md:text-xl font-medium bg-gradient-to-r from-blue-100 to-white bg-clip-text text-transparent">
+                    Fast-growing BNPL platform
+                </p>
+            </div>
+
+            <div class="w-full md:w-1/2 flex flex-col justify-center p-6 md:p-12">
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#3B82F6]"></div>
+                        <p
+                            class="text-base sm:text-lg md:text-xl font-medium bg-gradient-to-r from-blue-100 to-white bg-clip-text text-transparent">
+                            Increased the number of operators in the contact center from 12 people to 160 DIGITAL Agents
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-2.5 h-2.5 rounded-full bg-[#3B82F6]"></div>
+                        <p
+                            class="text-base sm:text-lg md:text-xl font-medium bg-gradient-to-r from-blue-100 to-white bg-clip-text text-transparent">
+                            Saved the fintech $2.8M per year
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Features Cards -->
+        <section class="py-40 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-12">
+                <div
+                    class="p-10 bg-white dark:bg-gray-800 dark:text-gray-300 shadow-xl rounded-2xl text-center hover:scale-105 transition duration-300 min-h-[250px] flex flex-col justify-between">
+                    <h3 class="text-3xl font-bold gradient-text">Launch Your Agent</h3>
+                    <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                        Initial development and launch take just 1 day, replicating the performance of your top
+                        employees.
+                    </p>
+                </div>
+                <div
+                    class="p-10 bg-white shadow-xl rounded-2xl text-center hover:scale-105 transition duration-300 min-h-[250px] flex flex-col justify-between">
+                    <h3 class="text-3xl font-bold gradient-text">Try for Free</h3>
+                    <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                        Try 1,000 conversations free and experience the powerful impact AI can have over your current
+                        contact
+                        center.
+                    </p>
+                </div>
+                <div
+                    class="p-10 bg-white shadow-xl rounded-2xl text-center hover:scale-105 transition duration-300 min-h-[250px] flex flex-col justify-between">
+                    <h3 class="text-3xl font-bold gradient-text">Pay For Results</h3>
+                    <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+                        Pay only when you're confident in the AI and only for completed conversations.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div class="flex flex-col items-end space-y-4 p-6">
+            <div class="flex flex-col items-end space-y-4 p-6">
+
+                <!-- Contact Section -->
+                <section id="contact"
+                    class="w-full py-20 sm:py-32 lg:py-40 bg-blue-50 dark:bg-gray-800 dark:text-gray-300">
+                    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 text-center w-full">
+                        <h2 class="text-4xl sm:text-5xl font-bold gradient-text">Contact Us</h2>
+                        <p class="mt-4 sm:mt-6 text-lg sm:text-xl text-gray-600">
+                            Have questions? Get in touch with us!
+                        </p>
+
+                        <form class="mt-10 sm:mt-12 space-y-5 sm:space-y-6 w-full max-w-4xl mx-auto">
+                            <input type="text" placeholder="Your Name" class="px-6 py-4 w-full border border-gray-300 rounded-xl 
+                focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+
+                            <input type="email" placeholder="Your Email" class="px-6 py-4 w-full border border-gray-300 rounded-xl 
+                focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+
+                            <textarea placeholder="Your Message" rows="5" class="px-6 py-4 w-full border border-gray-300 rounded-xl 
+                focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"></textarea>
+
+                            <button class="w-full px-8 py-4 bg-blue-600 text-white text-lg sm:text-xl rounded-xl 
+                hover:bg-blue-700 transition duration-300 shadow-lg">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </section>
+
+
+
+                <!-- Footer -->
+            </div>
+
+            <footer class="py-8 bg-gray-900 text-gray-400 text-center w-full">
+                <p class="text-lg">© 2025 PowerStaff By Abylay</p>
+            </footer>
+
+            </body>
+
+            </html>
